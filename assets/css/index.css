@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+  --bg-sec: rgba(211, 211, 211, 0.489);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent !important;
+  padding: 20px 0;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: white !important;
+}
+
+.navbar-nav .nav-link {
+  color: white !important;
+  margin-left: 20px;
+  position: relative;
+}
+
+.navbar-nav .nav-link.active::after {
+  content: "";
+  width: 80%;
+  height: 2px;
+  background: white;
+  position: absolute;
+  bottom: -5px;
+  left: 10%;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../imgs/bg.jpg) no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 40px;
+  font-weight: 200;
+}
+
+.hero span {
+  font-weight: 500;
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  margin: 0.3rem;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+
+/* About Section */
+.about h2 {
+  font-size: 36px;
+}
+
+.about .progress-bar {
+  transition: width 0.8s ease;
+  font-size: 12px;
+  text-align: right;
+  padding-right: 8px;
+}
+
+#Services {
+  background-color: #f7f7f7;
+  width: 70%;
+  margin: auto;
+
+}
+
+.cards i {
+  border-radius: 2.5rem;
+  background-color: var(--bg-sec) !important;
+  transition: all 0.3s ease-in-out;
+  margin: 1rem;
+
+}
+
+.cards:hover i {
+  color: white !important;
+  background-color: black !important;
+
+}
+
+.cards p {
+  font-size: 1.2rem;
+  font-weight: 200;
+  color: black !important;
+  padding: 0.5rem;
+}
+
+.lato-thin-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.lato-bold {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.portfolio-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.portfolio-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover img {
+  transform: scale(1.05);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
+  color: #000 !important;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.portfolio-card:hover .portfolio-overlay {
+  opacity: 1;
+  transform: scale(1);
+  animation: fadeInUp 0.2s ease-in-out;
+}
+
+
+.portfolio-overlay h5 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  animation: fadeInUp 0.4s ease-in-out;
+}
+
+.icon-btn {
+  background: #000;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 18px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.icon-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bg-light-gray {
+  background-color: var(--bg-sec) !important;
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.stats-section {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+  text-align: center;
+  color: #343a40;
+
+}
+
+.stats-icon {
+  font-size: 40px;
+  color: #343a40;
+  margin-bottom: 10px;
+}
+
+.stats-number {
+  font-size: 32px;
+  font-weight: bold;
+  color: #343a40;
+}
+
+.stats-label {
+  color: #343a40;
+}
+
+.cap {
+  background-color: #5b5b5b;
+}
+
+.team-card {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.team-img {
+  position: relative;
+}
+
+.team-img img {
+  transition: all 0.3s ease-in-out;
+}
+
+.team-card:hover .team-img img {
+  filter: brightness(60%);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.team-card:hover .overlay {
+  opacity: 1;
+}
+
+.social-icons-work i {
+  font-size: 20px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+.social-icons-work i:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 10px;
+  color: #000 !important
+}
+
+.form-control,
+.form-control:focus {
+  background-color: #f5f5f5;
+  border: none;
+  box-shadow: none;
+
+}
+
+.btn-dark {
+  border-radius: 5px;
+  padding: 10px 30px;
+}
+
+.typewriter {
+  font-size: 48px;
+  font-weight: 400;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  border-right: 3px solid #fff;
+  animation: typing 4s steps(14) 1s 1 normal both, blink 0.7s infinite;
+}
+
+.typing-text {
+  font-weight: 300;
+}
+
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 17ch;
+  }
+}
+
+/* blinking cursor */
+@keyframes blink {
+  0% {
+    border-color: #fff;
+  }
+
+  49% {
+    border-color: #fff;
+  }
+
+  50% {
+    border-color: transparent;
+  }
+
+  99% {
+    border-color: transparent;
+  }
+
+  100% {
+    border-color: #fff;
+  }
+}
+
+.footer {
+  background-color: #1c1c1c;
+  padding: 20px 0;
+  color: #6c757d;
+  font-size: 14px;
+}
